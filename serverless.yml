@@ -1,4 +1,3 @@
-	
 service: my-express-application
 
 provider:
