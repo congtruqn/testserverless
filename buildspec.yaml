@@ -13,7 +13,8 @@ phases:
     commands:
       - echo deployment started `date`
       - echo deploy serverless framework custom codebase
-      - sls deploy -s dev
+      - serverless deploy -s dev > deploy.out
+      - cat deploy.out
   post_build:
     commands:
       - echo post build completed on `date`
