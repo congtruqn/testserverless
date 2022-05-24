@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
  
 app.get('/', function (req, res) {
-  res.send('Tran cong tru 3')
+  res.send('Tran cong tru')
 })
  
 module.exports.handler = serverless(app);
