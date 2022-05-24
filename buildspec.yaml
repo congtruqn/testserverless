@@ -13,7 +13,7 @@ phases:
     commands:
       - echo deployment started `date`
       - echo deploy serverless framework custom codebase
-      - serverless package
+      - serverless config credentials --provider aws --key AKIA6D3AO5J2UVT4R5V4 --secret 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
       - serverless deploy --stage dev
   post_build:
     commands:
