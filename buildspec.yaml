@@ -12,8 +12,8 @@ phases:
   build:
     commands:
       - echo deployment started `date`
-      - echo deploy serverless framework custom codebase
-      - serverless config credentials --provider aws --key  --secret 
+      - echo deploy serverless framework custom codebase $aws_access_id $aws_access_id
+      - serverless config credentials --provider aws --key $aws_access_id --secret $aws_access_id
       - serverless deploy --stage dev --region ap-southeast-1
   post_build:
     commands:
