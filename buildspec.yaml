@@ -13,7 +13,8 @@ phases:
     commands:
       - echo deployment started `date`
       - echo deploy serverless framework custom codebase
-      - serverless deploy --stage dev --region ap-southeast-1
+      - serverless package
+      - serverless deploy --stage dev
   post_build:
     commands:
       - echo post build completed on `date`
