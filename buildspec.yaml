@@ -13,7 +13,8 @@ phases:
     commands:
       - echo deployment started `date`
       - echo deploy serverless framework custom codebase
-      - sls deploy -v -s dev
+      - STAGE_NAME=${CODEBUILD_INITIATOR##*/}
+      - serverless deploy -s ${STAGE_NAME}
   post_build:
     commands:
       - echo post build completed on `date`
