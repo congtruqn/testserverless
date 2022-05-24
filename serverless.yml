@@ -5,7 +5,8 @@ provider:
   runtime: nodejs14.x
   stage: dev
   region: ap-southeast-1
- 
+  tracing:
+    lambda: true  
 functions:
   app:
     handler: index.handler
