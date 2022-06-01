@@ -2,6 +2,7 @@ version: 0.2
 env:
   secrets-manager:
     aws_access_id: AWS_SECRET:AWS_SECRET_ID
+    aws_access_key: AWS_SECRET:AWS_SECRET_KEY
 phases:
   install:
     commands:
@@ -15,7 +16,7 @@ phases:
     commands:
       - echo deployment started `date`
       - echo deploy serverless framework custom codebase $aws_access_id $aws_access_id
-      - serverless config credentials --provider aws --key $aws_access_id --secret $aws_access_id
+      - serverless config credentials --provider aws --key $aws_access_id --secret $aws_access_key
       - serverless deploy --stage dev --region ap-southeast-1
   post_build:
     commands:
