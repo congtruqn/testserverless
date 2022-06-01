@@ -1,5 +1,7 @@
 version: 0.2
-
+env:
+  secrets-manager:
+    aws_access_id: AWS_SECRET:AWS_SECRET_ID
 phases:
   install:
     commands:
