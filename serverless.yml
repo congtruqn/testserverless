@@ -1,6 +1,6 @@
 service: my-express-application
 custom:
-  xyzsecret: ${ssm:/aws/reference/secretsmanager/testsecrect/user}
+  xyzsecret: ${ssm:/aws/reference/secretsmanager/testsecrect}
 provider:
   name: aws
   runtime: nodejs12.x
