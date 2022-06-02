@@ -9,12 +9,11 @@ provider:
     lambda: true
   environment:
     APP_DOMAIN: ${ssm:parameterStore}
+    AWS_SECRET_ID: ${ssm:/aws/reference/secretsmanager/AWS_SECRET_ID~true}
+    AWS_SECRET_KEY: ${ssm:/aws/reference/secretsmanager/AWS_SECRET_KEY~true}
 functions:
   app:
     handler: index.handler
-    environment:
-      AWS_SECRET_ID: ${ssm:/aws/reference/secretsmanager/AWS_SECRET_ID~true}
-      AWS_SECRET_KEY: ${ssm:/aws/reference/secretsmanager/AWS_SECRET_KEY~true}
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'               
