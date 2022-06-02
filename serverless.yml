@@ -2,6 +2,8 @@ service: my-express-application
 
 provider:
   name: aws
+  custom:
+    xyzsecret: ${ssm:/aws/reference/secretsmanager/AWS_SECRET~true}
   runtime: nodejs12.x
   stage: dev
   region: ap-southeast-1
@@ -9,7 +11,7 @@ provider:
     lambda: true
   environment:
     APP_DOMAIN: ${ssm:parameterStore}
-    AWS_SECRET_ID: ${ssm:/aws/reference/secretsmanager/AWS_SECRET.AWS_SECRET_ID}
+    AWS_SECRET_ID: ${self:custom.xyzsecret.AWS_SECRET_ID}
 functions:
   app:
     handler: index.handler
