@@ -11,7 +11,7 @@ app.get('/trutran', function (req, res) {
   res.json({test:a})
 })
 app.get('/test', function (req, res) {
-  let a =  process.env.AWS_SECRET_ID+'test11'
+  let a =  process.env.AWS_SECRET_ID
   res.json({test:a})
 })
 module.exports.handler = serverless(app);
