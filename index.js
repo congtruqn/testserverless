@@ -10,4 +10,8 @@ app.get('/trutran', function (req, res) {
   let a =  process.env.APP_DOMAIN
   res.json({test:a})
 })
+app.get('/test', function (req, res) {
+  let a =  process.env.APP_DOMAIN
+  res.json({test:a})
+})
 module.exports.handler = serverless(app);
