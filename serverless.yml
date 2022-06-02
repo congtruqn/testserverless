@@ -2,8 +2,6 @@ service: my-express-application
 
 provider:
   name: aws
-  custom:
-    supersecret: ${ssm:/aws/reference/secretsmanager/AWS_SECRET~true}
   runtime: nodejs12.x
   stage: dev
   region: ap-southeast-1
