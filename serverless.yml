@@ -10,7 +10,7 @@ provider:
     lambda: true
   environment:
     APP_DOMAIN: ${ssm:parameterStore}
-    AWS_SECRET_ID: ${self.custom.xyzsecret}
+    AWS_SECRET_ID: ${self:custom.xyzsecret}
 
 functions:
   app:
