@@ -1,9 +1,8 @@
 service: my-express-application
-
+custom:
+  xyzsecret: ${ssm:/aws/reference/secretsmanager/testsecrect}
 provider:
   name: aws
-  custom:
-    xyzsecret: ${ssm:/aws/reference/secretsmanager/testsecrect}
   runtime: nodejs12.x
   stage: dev
   region: ap-southeast-1
@@ -11,7 +10,8 @@ provider:
     lambda: true
   environment:
     APP_DOMAIN: ${ssm:parameterStore}
-    AWS_SECRET_ID: ${self:custom.xyzsecret}
+    AWS_SECRET_ID: ${self.custom.xyzsecret.user}
+
 functions:
   app:
     handler: index.handler
