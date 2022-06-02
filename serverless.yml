@@ -11,7 +11,7 @@ provider:
     lambda: true
   environment:
     APP_DOMAIN: ${ssm:parameterStore}
-    AWS_SECRET_ID: ${self:custom.supersecret.AWS_SECRET_ID}
+    AWS_SECRET_ID: ${self:custom.supersecret}
 functions:
   app:
     handler: index.handler
