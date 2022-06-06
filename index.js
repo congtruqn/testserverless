@@ -4,15 +4,14 @@ const express = require('express')
 const app = express()
 const dynamoose = require("dynamoose");
 const ddb = new dynamoose.aws.sdk.config.update({
-  "accessKeyId": process.env.AWS_SECRET_ID,
-  "secretAccessKey": process.env.AWS_SECRET_KEY,
+  "accessKeyId": process.env.accessKeyId,
+  "secretAccessKey": process.env.secretAccessKey,
   "region": "ap-southeast-1"
 });
 app.get('/', function (req, res) {
   res.send('Tran cong tru')
 })
 app.get('/trutran', function (req, res) {
-  let a =  process.env.APP_DOMAIN
   res.json({test:a})
 })
 app.get('/test', function (req, res) {
