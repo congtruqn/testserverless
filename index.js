@@ -8,6 +8,7 @@ const ddb = new dynamoose.aws.sdk.config.update({
   "secretAccessKey": process.env.secretAccessKey,
   "region": "ap-southeast-1"
 });
+dynamoose.aws.ddb.set(ddb);
 app.get('/', function (req, res) {
   res.send('Tran cong tru')
 })
