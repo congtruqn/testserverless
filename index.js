@@ -3,11 +3,11 @@ const serverless = require('serverless-http');
 const express = require('express')
 const app = express()
 const dynamoose = require("dynamoose");
-console.log(process.env.accessKeyId)
-const ddb = new dynamoose.aws.sdk.config.update({
-  "accessKeyId": process.env.accessKeyId,
-  "secretAccessKey": process.env.secretAccessKey,
-  "region": "ap-southeast-1"
+console.log(process.env.secretAccessKey)
+const ddb = new dynamoose.aws.sdk.DynamoDB({
+  "accessKeyId": "AKID",
+  "secretAccessKey": "SECRET",
+  "region": "us-east-1"
 });
 dynamoose.aws.ddb.set(ddb);
 app.get('/', function (req, res) {
