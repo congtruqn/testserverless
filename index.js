@@ -18,11 +18,12 @@ app.get('/trutran', function (req, res) {
 })
 app.get('/test', function (req, res) {
   const User = dynamoose.model("User", {"id": Number, "name": String});
-  const myUser = new User({
-      "id": 1,
-      "name": "Tim"
-  });
-  console.log(myUser.id);
+  try {
+    const user = await User.create({"id": 1, "name": "Tim"}); // If a user with `id=1` already exists in the table, an error will be thrown.
+    console.log(user);
+  } catch (error) {
+      console.error(error);
+  }
   res.json({test:"a"})
 })
 module.exports.handler = serverless(app);
