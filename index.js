@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 app.get('/trutran', function (req, res) {
   res.json({test:a})
 })
-app.get('/test', function (req, res) {
+app.get('/test',async function (req, res) {
   const User = dynamoose.model("User", {"id": Number, "name": String});
   try {
     const user = await User.create({"id": 1, "name": "Tim"}); // If a user with `id=1` already exists in the table, an error will be thrown.
