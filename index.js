@@ -3,6 +3,7 @@ const serverless = require('serverless-http');
 const express = require('express')
 const app = express()
 const dynamoose = require("dynamoose");
+console.log(process.env.accessKeyId)
 const ddb = new dynamoose.aws.sdk.config.update({
   "accessKeyId": process.env.accessKeyId,
   "secretAccessKey": process.env.secretAccessKey,
