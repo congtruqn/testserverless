@@ -16,12 +16,13 @@ app.get('/', function (req, res) {
 })
 app.get('/trutran', function (req, res) {
   const connection = mysql.createConnection({
-    host: process.env.db_username,
+    host: 'trutran.cluster-c8ls3dqlbk8b.ap-southeast-1.rds.amazonaws.com',
     port: 3306,
     user: process.env.db_username,
-    password: process.env.db_username,
-    database: process.env.db_username
+    password: process.env.db_password,
+    database: 'trutran'
   });
+  res.json({test:"a"})
 })
 app.get('/test',async function (req, res) {
   const User = dynamoose.model("User", {"id": Number, "name": String});
