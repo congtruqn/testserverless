@@ -11,7 +11,7 @@ provider:
   environment:
     accessKeyId: ${self:custom.xyzsecret.user}
     secretAccessKey: ${self:custom.xyzsecret.password}
-    db_username: ${ssm:/path/to/service/parameterStore}
+    db_username: ${ssm:arameterStore}
 functions:
   app:
     handler: index.handler
