@@ -28,6 +28,7 @@ app.get('/trutran',async function (req, res) {
     await mysql.end()
    
     // Return the results
+    console.log(results)
     res.json(results)
     //return results
   }
