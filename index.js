@@ -22,6 +22,7 @@ app.get('/', function (req, res) {
 })
 app.get('/trutran',async function (req, res) {
   try{
+    await mysql.connect()
     let results = await mysql.query('SELECT * FROM Persons')
  
     // Run clean up function
@@ -31,9 +32,8 @@ app.get('/trutran',async function (req, res) {
     console.log(results)
     res.json(results)
     //return results
-  }
-  catch(error){
-    console.log(error)
+  } catch(error){
+    console.error(error)
   }
 })
 app.get('/test',async function (req, res) {
