@@ -15,7 +15,8 @@ const mysql = require('serverless-mysql')({
     user     : process.env.db_username,
     password : process.env.db_password
   }
-})       
+})
+console.log(mysql);   
 dynamoose.aws.ddb.set(ddb);
 app.get('/', function (req, res) {
   res.send('Tran cong tru')
