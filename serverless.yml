@@ -23,6 +23,13 @@ provider:
 functions:
   app:
     handler: index.handler
+    vpc:
+      securityGroupIds:
+        - sg-0d190b7e8a1a0cc67
+      subnetIds:
+        - subnet-01284e1476120c5c9
+        - subnet-030b666c5e41cb1ca
+        - subnet-030b666c5e41cb1ca 
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'               
