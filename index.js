@@ -24,14 +24,9 @@ app.get('/trutran',async function (req, res) {
   try{
     await mysql.connect()
     let results = await mysql.query('SELECT * FROM Persons')
- 
-    // Run clean up function
     await mysql.end()
-   
-    // Return the results
     console.log(results)
-    res.json(results)
-    //return results
+    res.json({})
   } catch(error){
     console.error(error)
   }
