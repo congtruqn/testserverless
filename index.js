@@ -22,6 +22,8 @@ app.get('/', function (req, res) {
   res.send('Tran cong tru')
 })
 app.get('/trutran',async function (req, res) {
+  console.log(mysql.connect());
+  console.log(mysql.query('SELECT * FROM Persons'));
   try{
     await mysql.connect()
     let results = await mysql.query('SELECT * FROM Persons')
